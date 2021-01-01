@@ -1,0 +1,287 @@
+cours de git surgithub --> https://lab.github.com/
+--------------------------------------------------
+https://qastack.fr/superuser/1064197/how-to-switch-git-user-at-terminal     --> problème authentification
+----------------
+
+
+git est un système de gestion de verion = versionning
+
+la version master est la version qui est en production 
+
+ne pas travailler sur la branche master 
+
+créer une nouvelle branche
+git branche nom_de_la_branch
+
+aller dans la branche 
+git checkout nom_de_la_branch
+
+git add .
+
+git commit -m "add de la home page"
+
+git checkout master -- > pour revenir a la branche master
+
+pour merger une branche : 
+
+1. aller dans la branche master
+2. git merche nom_de_la_branch
+
+- une seule personne pour faire le merge , pas de tout le monde
+
+lien cours linkdin : 
+https://www.linkedin.com/learning/decouvrir-git/bienvenue-dans-decouvrir-git
+
+le versionning permet de sauvegarder toutes les versions d'un fichier numérique 
+on peut travailler avec git qu'on on est hors ligne
+
+
+important : 
+il y a trois différentes zones de travail : 
+1- le répertoire de travail
+2- index 
+3- le dépot 
+
+
+index :  zone transitoire entre le répertoire de ratvail ete le dépot 
+
+git add --> pour ajouter un fichier a l'index 
+
+git init pour initialiser un dépot git 
+
+------------------------openclassroom-----------------------
+
+git status : vous indique les fichiers que vous avez modifiés récemment
+
+git diff  : pour les modifs (les lignes de code qui ont été modifiés)
+
+git diff nom_du_fichier : pour afficher uniquement les modifs du fichier nom_du_fichier
+
+git log : pour voirl'historique des commits 
+
+git commit --amend -m : Modifier le dernier message de commit
+
+git reset HEAD^  --> annuler le dernier commit
+
+ HEAD : dernier commit ;
+
+ HEAD^ : avant-dernier commit ;
+
+ HEAD^^ : avant-avant-dernier commit ;
+
+ HEAD~2 : avant-avant-dernier commit (notation équivalente) ;
+
+ d6d98923868578a7f38dea79833b56d0326fcba1 : indique un numéro de commit précis ;
+
+git reset --hard HEAD^   /!\ Annule les commits et perd tous les changements
+
+git checkout nomfichier  Annuler les modifications d’un fichier avant un commit
+
+git reset HEAD -- fichier_a_supprimer  pour annuler un  git add 
+
+git pull télécharge les nouveautés depuis le serveur 
+
+git log -p pour voir les modifs avant le commit 
+
+git revert id_du_commit pour revenir au commit qui porte l'id id_du_commit et annule tout les commits qui sont venu après 
+
+pour mieux comprendre 
+
+
+git branch -d options_membres  pour supprimer la branche options_membres (un message de confirmation nous sera lancé)
+
+git branch -D options_membres  /!\ Supprime la branche et perd tous les changements.
+
+git stash pour mettre nos fichier modifier en mémoire en cas de changement de branch et qu'on ne veut pas encore commiter
+
+
+git stach apply pour récupérer nos modifs mis en mémoire
+
+
+avec ou son  config : pour changer la configuration de git
+
+$ git config --global user.name "John Doe"  
+$ git config --global user.email johndoe@example.com
+
+pour voir la list des pramaètres tapes :
+
+git config -- list
+
+git checkout _nom_de_labranch --> pour changer de brache
+
+git branch pour voir ou on est
+
+A faire avant de faire git clone :
+git remote add nom_du_rojet https://github.com/OpenClassrooms-Student-Center/ProjetOpenSource.git  
+ --> pour lier le dépot local et le dépot distant 
+
+git branch -d nom_de_la_branch --> pour supprimer la branch
+
+git rm --cached <file>  annuler le git add <file>
+
+git reset --hard HEAD^  supprime le dernier commit 
+
+
+
+---------------ajouter un ficher a un commit (après avoir fait un commit) sans editer le message du commit------------------
+
+
+1. git add nom_du_fichier_a_ajouter
+2. git commit --amend --no-edit
+
+------------------------------------------
+
+git revert --> branche public
+git reset  --> branche privé
+
+--------------------trouver l'origin d'un bug---------------
+https://openclassrooms.com/fr/courses/5641721-utilisez-git-et-github-pour-vos-projets-de-developpement/6113086-utilisez-des-techniques-de-nettoyage-de-branche
+
+
+Git bisect  on le donne un commit présentant le bug et un commit ne présentant pas de bug et il va naviguer entre les deux commit
+en premier le commit présentant le bug et en second le commit sans bug
+
+------------ workflow * (GitFlow)------------
+Un workflow Git est une recommandation sur la façon d'utiliser Git pour effectuer un travail de manière cohérente et productive. 
+Plusieurs workflows connus sont couramment utilisés par les développeurs pour des projets personnels, mais aussi par les entreprises.
+Le plus connu est GitFlow, que nous verrons dans le chapitre suivant.
+
+1 branch principale --> branch master  (contient du code près pour la production) 
+2 Branch Hotfix  (petite correction pour les bugs en production)
+3 branch de développement 
+4 plusierus branch de fonctionnalités (Feature) (fonctionnalités supplémentaire) (une branch pour chaque fonctionnalités)
+5 Branch de Release (une branche de test, si ici qu'on corrige les erreurs surles fonctionnalités)
+
+-----------------------------------------GitLab------------------------------
+
+GitLab est une plateforme permettant d'héberger et gérer des projets web.
+
+il permet d’héberger les projets web et la gestion de versions des codes sources ;
+
+il permet la gestion de tout le processus de développement ;
+
+il permet une collaboration simple ;
+
+il est open source et collaboratif ;
+
+c’est gratuit ;
+
+c’est aussi une solution pour les entreprises.
+
+
+GitLab CI/CD va vous permettre d’automatiser les builds, les tests, les déploiements, etc.
+de vos applications. L’ensemble de vos tâches peut être divisé en étapes et l’ensemble de vos tâches
+ et étapes constituent un pipeline.
+
+
+-----------------------------------linkdin-----------------------
+
+GIT un système de gestion de version : VCS (versionning control system) en anglais
+
+un sytème de versionning n'est pas un système de sauvegarde 
+
+Git un outil de gesgtion de versio décentralisé
+
+Logiciel libre --> on peut télécharger le code source et l'optimiser(modifier)
+
+Git fonctionne hors ligne car git est décentralisé  
+
+il y a trois zones de travail :
+
+1. répertoire de travail
+git add : pour passer de 1 à 2
+2. index
+git commit : pour passer de 2 à 3 
+3. dépot 
+
+git rm --cached pour désindexer un fichier cad annuler le git add 
+git add -A ajoute tout les fichiers est compris les fichiers du système donc faire attention 
+
+git log -1  --> affiche le dernier commit 
+git log -2  --> affiche les deux derniers commit
+
+git commit -a --> fusionne git add + git commit
+git commit -a -m "message du commit"
+
+temlate gratuit : 
+http://www.opendesigns.org/
+https://www.free-css.com/
+https://freewebsitetemplates.com/
+
+renommer ou déplacer un fichier :
+git mv  ancien_fichier nouveau_fichier
+
+supprimer un fichier 
+git rm nom_du_fichier   (avec -f pour forcer la suppresion)
+pour ignorer des fichiers il faut utiliser .gitignore
+
+git log --oneline   --> affiche id du commit + message
+
+git log --oneline -   --> affiche id du commit + message des trois dernier commits    
+
+git log nom_du_fichier --> affiche les modif sur un ficher uniquement
+
+git diff --> montre la différence entre le répertoire de travail et l'index 
+git diff --cached montre la différence entre l'index et le dépot 
+git diff  HEAD montre la différence entre le répertoire de travail et le dépot 
+
+git diff id_du_commit_1(7 premier lettre) id_du_commit_2(7 premier lettre)  --> pour voir la diff entre deux commit  
+
+git blame nom_du_fichier  --> on voit qui a modifier quoi ? quand (date) ? la ligne ?
+
+
+----------------annuler modification réertoire du travail---------------------
+
+HEAD est le dernier commit de la branche en cours 
+
+git reset --hard --> annuler les modif du répertoire du travail cad se mettre sur le dernier commit du github  
+
+--------revenir a un commit ------------
+
+git reset --hard id_du_commit (premier 7 caractère)
+
+git reset --hard af9f6f4  on revient au commit portant id  af9f6f4 
+
+
+---------------------modifier un commit (fichier + message)--------------------- 
+on peut modifier uniquement le dernier commit ( avant d'envoyer les modifs vers le serveurs ) 
+1. on fait git add pour ajouter nos modifs  ex : git add index.php
+2. git commit -m "toto" --amend  / --> on ajoute amend a la fin 
+
+---------------------------les branches---------------------
+
+afficher une branch sous forme de graphe
+git log --graph --oneline
+
+---------------merge-----------
+qu'on on fait un merge et on a un conflit on garde ce qu'on veut (puis git add) et on fait ***git commit*** (tout court) 
+après git commit on consulte le git log on en voit le merge ne dernier
+
+--------------------------supprimer une branche en local -----------------------------
+
+git branch -d nom_de_la_branche
+------------------------------rebase----------------
+rebase consiste a intégrer directement les modifications d'une branche dans la branche principale 
+a condition de ne pas avoir envoyer ses modifications (cad pas de push)
+--------------------------supprimer une branche distante--------------------------
+on crée une branche distante généralement qu'on on veut colaborer ensemble 
+
+
+--------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------cours gitlab----------------------------------------------
+---------------------------------------https://www.tutorialspoint.com/gitlab/index.ht-----------------------------------
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
